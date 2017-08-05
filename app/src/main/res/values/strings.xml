@@ -4,4 +4,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add">ADD</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="car_make">Car Make</string>
+    <string name="car_model">Car Model</string>
+    <string name="car_cost">Car Cost</string>
+    <string name="udpate">Update</string>
+    <string name="delete">Delete</string>
+    <string name="view">View</string>
 </resources>

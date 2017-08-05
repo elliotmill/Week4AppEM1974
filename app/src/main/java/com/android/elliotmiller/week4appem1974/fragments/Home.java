@@ -44,7 +44,14 @@ public class Home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        view.findViewById(R.id.btn_create_customer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.addCustomer();
+            }
+        });
+        return view;
     }
 
     @Override
@@ -54,7 +61,7 @@ public class Home extends Fragment {
             mListener = (HomeInterface) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement DetailsInterface");
         }
     }
 
