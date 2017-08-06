@@ -1,14 +1,19 @@
 package com.android.elliotmiller.week4appem1974.fragments;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.elliotmiller.week4appem1974.R;
+import com.android.elliotmiller.week4appem1974.model.DatabaseHandler;
 
 
 /**
@@ -22,6 +27,8 @@ import com.android.elliotmiller.week4appem1974.R;
 public class Home extends Fragment {
 
     private HomeInterface mListener;
+    private DatabaseHandler dbHandler;
+    private RecyclerView recyclerView;
 
     public Home() {
         // Required empty public constructor
@@ -51,7 +58,18 @@ public class Home extends Fragment {
                 mListener.addCustomer();
             }
         });
+        recyclerView = view.findViewById(R.id.rv);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        dbHandler = new DatabaseHandler(getContext());
+        Cursor cursor = dbHandler.getUsers();
+        recyclerView.setAdapter(new HomeAdapter(getContext(), mListener, cursor));
     }
 
     @Override
@@ -78,7 +96,7 @@ public class Home extends Fragment {
      * activity.
      */
     public interface HomeInterface {
-        void selectCustomer(long id);
+        void selectCustomer(String id, String fName, String lName, String make, String model, String cost);
         void addCustomer();
     }
 }

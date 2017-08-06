@@ -20,14 +20,27 @@ public class MainActivity extends AppCompatActivity implements Home.HomeInterfac
     }
 
     @Override
-    public void selectCustomer(long id) {
-
+    public void selectCustomer(
+            String id,
+            String fName,
+            String lName,
+            String make,
+            String model,
+            String cost
+    ) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(
+                R.id.main_view,
+                Details.newInstance(Details.ACTION_UPDATE, id, fName, lName, make, model, cost)
+        );
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
     @Override
     public void addCustomer() {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.main_view, Details.newInstance(Details.ACTION_ADD, -1));
+        ft.replace(R.id.main_view, Details.newInstance(Details.ACTION_ADD));
         ft.addToBackStack(null);
         ft.commit();
     }

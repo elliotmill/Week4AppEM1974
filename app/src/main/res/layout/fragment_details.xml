@@ -11,11 +11,14 @@
         <TextView
             android:id="@+id/tv_id"
             android:visibility="gone"
+            android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_f_n"
             android:layout_width="match_parent"
+            android:paddingTop="5dp"
             android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/et_first_name"
@@ -26,6 +29,8 @@
 
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_l_n"
+            android:paddingTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -37,6 +42,8 @@
 
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_make"
+            android:paddingTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -48,6 +55,8 @@
 
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_model"
+            android:paddingTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
@@ -59,37 +68,42 @@
 
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_cost"
+            android:paddingTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/et_car_cost"
                 android:hint="@string/car_cost"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </android.support.design.widget.TextInputLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="5dp"
             android:gravity="right">
 
+            <Button
+                android:text="@string/delete"
+                android:id="@+id/btn_delete"
+                android:visibility="gone"
+                android:textColor="@color/colorDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <Button
                 android:text="@string/view"
                 android:id="@+id/btn_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-
-            <Button
-                android:text="@string/delete"
-                android:id="@+id/btn_delete"
-                android:textColor="@android:color/holo_red_dark"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
             <Button
                 android:text="@string/add"
+                android:textColor="@color/colorPrimary"
                 android:id="@+id/btn_add_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

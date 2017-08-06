@@ -8,8 +8,8 @@
     <string name="last_name">Last Name</string>
     <string name="car_make">Car Make</string>
     <string name="car_model">Car Model</string>
-    <string name="car_cost">Car Cost</string>
-    <string name="udpate">Update</string>
-    <string name="delete">Delete</string>
-    <string name="view">View</string>
+    <string name="car_cost">Car Cost ($)</string>
+    <string name="udpate">UPDATE</string>
+    <string name="delete">DELETE</string>
+    <string name="view">VIEW</string>
 </resources>
